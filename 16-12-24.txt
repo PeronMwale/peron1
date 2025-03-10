@@ -1,0 +1,150 @@
+﻿BASE-
+BA-> Basically Available
+S->Soft State
+E-> Eventual Consistency
+
+
+CAP theorem->
+C-> Consistency
+A-> Availability
+P-> Partition Tolerance
+
+
+At one time two concepts will be considered for NoSQL databases.
+
+
+ACID-
+A-> Atomicity
+C-> Consistency
+I-> Isolation
+D-> Durability
+
+
+Steps to download and install Mongodb Community server
+
+
+Step1: Type in search mongodb
+Step 2: Select Mongodb Community server
+Step 3: Download the link for Windows download.
+Step 4: Welcome wizard-> click Next
+Setp 5: Terms and conditions-> accept -> Next
+Step 6: Choose the setup->Complete
+Step 7: Service Configuration-default-no changes-> Next
+Step 8: Install MongoDB Compass-> Next
+Step 9: Click on Install
+Step 10: Click Finish
+
+
+
+
+By default 3 databases -
+
+
+admin
+local
+config
+
+
+To create new database-
+syntax:
+create database databasename;
+
+
+By default when we create any database ,a collection is also created.
+
+
+AutoSharding- The nodes or computers are Known as SHARDS.
+The data is stored in these SHARDS.
+The collection of all SHARDS make a CLUSTER.
+
+
+To create new database-
+1.use sample
+
+
+To create new collection
+
+
+2. db.createCollection("emp")
+
+
+To view all databases-
+
+
+3. show dbs
+
+
+To switch to previous database
+4. use cdac
+
+
+To view collections inside database-
+
+
+5. show collections
+
+
+To add new data to the collection-
+INSERT
+db.collection.insertOne- this adds only one document.
+db.collection.insertMany- This adds many documents.
+
+
+to add  only one document-
+6. db.emp.insertOne({eid:100,ename:"John"})
+
+
+7. To view the documents in a collection in EMP -
+  db.emp.find()
+
+
+It is similar to the below RDBMS query
+ select * from emp;
+
+
+8.To add many documents to the collection-
+
+
+db.emp.insertMany([{eid:200,ename:"Maria",salary:24000},{eid:300,ename:"Mary"},{eid:400,ename:"Richa",salary:25000,deptid:10}])
+
+
+9. to clear screen 
+cls
+
+
+all the character and date values to be enclosed in double quotes.
+
+
+Q1. Write a Mongodb query to create new Collection as DEPT
+with keys as deptid, dname,locid.
+
+
+db.createCollection("dept")
+
+
+Q2. Populate data in it.(Insert data in DEPT)
+
+
+db.dept.insertMany([{deptid:10,dname:"HR",locid:1800},{deptid:20,dname:"Admin"},{deptid:30,dname:"Sales",locid:1700},{deptid:40,dname:"Production"}])
+
+
+
+
+Q3. Write a Mongodb query to create new Collection as LOC
+with keys as locid, lname,city.
+Populate data in it.(Insert data in LOC)
+
+
+db.createCollection("loc")
+
+
+db.loc.insertMany([{locid:1700,lname:"USA",city:"Chicago"},{locid:1800,lname:"Canada"},{locid:1900,lname:"Japan",city:"Tokyo"}])
+
+
+
+
+db.dept.find()
+db.loc.find()
+
+
+Key and collection names are case sensitive.
